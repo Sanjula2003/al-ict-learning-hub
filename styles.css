@@ -1,0 +1,502 @@
+/* ==============================
+   AL ICT Learning Hub - Styles
+   Dark modern responsive design
+================================= */
+
+/* Global reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* CSS color variables for easy changes */
+:root {
+  --bg: #080b12;
+  --panel: #111827;
+  --panel-light: #172033;
+  --text: #f8fafc;
+  --muted: #94a3b8;
+  --primary: #38bdf8;
+  --primary-dark: #0284c7;
+  --success: #22c55e;
+  --danger: #ef4444;
+  --border: rgba(255, 255, 255, 0.1);
+  --shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+/* Body */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(34, 197, 94, 0.12), transparent 35%),
+    var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+/* Top bar */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  padding: 18px 6%;
+  background: rgba(8, 11, 18, 0.86);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--border);
+}
+
+.topbar h1 {
+  font-size: 24px;
+  margin-bottom: 4px;
+}
+
+.topbar p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.top-actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* Main container */
+.container {
+  width: min(1180px, 92%);
+  margin: 32px auto;
+}
+
+/* View switching */
+.view {
+  display: none;
+}
+
+.view.active {
+  display: block;
+}
+
+/* Section title */
+.section-title {
+  margin-bottom: 24px;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.section-title p {
+  color: var(--muted);
+}
+
+/* Buttons */
+.btn {
+  border: none;
+  border-radius: 12px;
+  padding: 11px 16px;
+  color: white;
+  cursor: pointer;
+  font-weight: 700;
+  transition: 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn.primary {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+}
+
+.btn.secondary {
+  background: var(--panel-light);
+  border: 1px solid var(--border);
+}
+
+.btn.success {
+  background: var(--success);
+}
+
+.btn.danger {
+  background: var(--danger);
+}
+
+/* Dashboard cards */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.topic-card {
+  background: linear-gradient(180deg, var(--panel-light), var(--panel));
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 22px;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.topic-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(56, 189, 248, 0.5);
+}
+
+.topic-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  font-size: 26px;
+  background: rgba(56, 189, 248, 0.14);
+  margin-bottom: 16px;
+}
+
+.topic-card h3 {
+  font-size: 21px;
+  margin-bottom: 8px;
+}
+
+.topic-card p {
+  color: var(--muted);
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 10px 0;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--success));
+}
+
+.progress-text {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* Course layout */
+.back-btn {
+  margin-bottom: 18px;
+}
+
+.course-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 20px;
+}
+
+.video-panel,
+.lesson-sidebar,
+.admin-card {
+  background: rgba(17, 24, 39, 0.92);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+}
+
+.video-panel {
+  padding: 22px;
+}
+
+.course-header {
+  margin-bottom: 18px;
+}
+
+.badge {
+  display: inline-block;
+  color: var(--primary);
+  background: rgba(56, 189, 248, 0.12);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.course-header h2 {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.course-header p,
+.lesson-info p,
+.muted {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* YouTube responsive video */
+.video-wrapper {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: black;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  margin-bottom: 20px;
+}
+
+.video-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Lesson info */
+.lesson-info {
+  margin-bottom: 18px;
+}
+
+.lesson-info h3 {
+  margin-bottom: 8px;
+}
+
+/* Materials */
+.materials-box {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 16px;
+  margin-bottom: 18px;
+}
+
+.materials-box h4 {
+  margin-bottom: 10px;
+}
+
+.material-link {
+  display: inline-block;
+  color: var(--primary);
+  text-decoration: none;
+  margin-right: 12px;
+  margin-bottom: 8px;
+}
+
+.material-link:hover {
+  text-decoration: underline;
+}
+
+.lesson-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Lesson sidebar */
+.lesson-sidebar {
+  padding: 18px;
+  max-height: 760px;
+  overflow: auto;
+}
+
+.lesson-sidebar h3 {
+  margin-bottom: 14px;
+}
+
+.lesson-item {
+  padding: 14px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.035);
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.lesson-item:hover,
+.lesson-item.active {
+  border-color: var(--primary);
+  background: rgba(56, 189, 248, 0.1);
+}
+
+.lesson-item h4 {
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.lesson-item p {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.watched {
+  color: var(--success);
+  font-weight: bold;
+}
+
+/* Admin */
+.admin-warning {
+  background: rgba(250, 204, 21, 0.12);
+  border: 1px solid rgba(250, 204, 21, 0.3);
+  color: #fde68a;
+  padding: 14px;
+  border-radius: 16px;
+  margin-bottom: 18px;
+}
+
+.admin-card {
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.admin-card h3 {
+  margin-bottom: 14px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  background: #0b1220;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: var(--text);
+  padding: 12px;
+  outline: none;
+}
+
+textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--primary);
+}
+
+/* Admin content list */
+.admin-topic {
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 14px;
+  margin-bottom: 12px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.admin-topic-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.admin-lesson {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+  padding: 10px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+}
+
+.backup-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.file-label {
+  background: var(--panel-light);
+  border: 1px solid var(--border);
+  padding: 11px 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.file-label input {
+  display: none;
+}
+
+/* Toast */
+.toast {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background: var(--panel-light);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 14px 18px;
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  display: none;
+}
+
+.toast.show {
+  display: block;
+}
+
+/* Tablet responsive */
+@media (max-width: 900px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .course-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .lesson-sidebar {
+    max-height: none;
+  }
+}
+
+/* Mobile responsive */
+@media (max-width: 620px) {
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .top-actions,
+  .lesson-actions,
+  .backup-actions {
+    width: 100%;
+  }
+
+  .btn,
+  .file-label {
+    width: 100%;
+    text-align: center;
+  }
+
+  .card-grid,
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title h2 {
+    font-size: 26px;
+  }
+
+  .course-header h2 {
+    font-size: 24px;
+  }
+}

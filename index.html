@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>AL ICT Learning Hub</title>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="topbar">
+    <div>
+      <h1>AL ICT Learning Hub</h1>
+      <p>Modern YouTube-based learning platform for AL ICT students</p>
+    </div>
+
+    <div class="top-actions">
+      <button id="homeBtn" class="btn secondary">Dashboard</button>
+      <button id="adminBtn" class="btn primary">Teacher Admin</button>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section id="dashboardView" class="view active">
+      <div class="section-title">
+        <h2>Subject Topics</h2>
+        <p>Select a topic and continue learning chapter by chapter.</p>
+      </div>
+
+      <div id="topicCards" class="card-grid"></div>
+    </section>
+
+    <section id="courseView" class="view">
+      <button id="backBtn" class="btn secondary back-btn">← Back to Dashboard</button>
+
+      <div class="course-layout">
+        <div class="video-panel">
+          <div class="course-header">
+            <p id="courseBadge" class="badge">AL ICT Topic</p>
+            <h2 id="courseTitle">Course Title</h2>
+            <p id="courseDescription">Course description</p>
+          </div>
+
+          <div class="video-wrapper">
+            <iframe
+              id="videoFrame"
+              title="Lesson Video"
+              src=""
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <div class="lesson-info">
+            <h3 id="lessonTitle">Lesson Title</h3>
+            <p id="lessonDescription">Lesson description</p>
+          </div>
+
+          <div class="materials-box">
+            <h4>Materials</h4>
+            <div id="materialList"></div>
+          </div>
+
+          <div class="lesson-actions">
+            <button id="markWatchedBtn" class="btn success">Mark as Watched</button>
+            <button id="nextLessonBtn" class="btn primary">Next Lesson →</button>
+          </div>
+        </div>
+
+        <aside class="lesson-sidebar">
+          <h3>Chapters</h3>
+          <div id="lessonList"></div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="adminView" class="view">
+      <div class="section-title">
+        <h2>Teacher Admin Panel</h2>
+        <p>Login as the teacher to manage topics, YouTube lessons, and materials.</p>
+      </div>
+
+      <div class="admin-warning">
+        <strong>Secure Mode:</strong> Content is stored in Firebase Firestore. Only logged-in teachers can add or delete content.
+      </div>
+
+      <div class="admin-card">
+        <h3>Add New Topic</h3>
+
+        <div class="form-grid">
+          <input id="topicNameInput" type="text" placeholder="Topic name e.g. Programming Fundamentals" />
+          <input id="topicIconInput" type="text" placeholder="Emoji/icon e.g. 💻" />
+          <textarea id="topicDescInput" placeholder="Short topic description"></textarea>
+        </div>
+
+        <button id="addTopicBtn" class="btn primary">Add Topic</button>
+      </div>
+
+      <div class="admin-card">
+        <h3>Add New Video Lesson</h3>
+
+        <div class="form-grid">
+          <select id="topicSelect"></select>
+          <input id="lessonTitleInput" type="text" placeholder="Lesson title e.g. Number Systems" />
+          <input id="youtubeUrlInput" type="text" placeholder="YouTube URL or video ID" />
+          <textarea id="lessonDescInput" placeholder="Lesson description"></textarea>
+          <input id="materialTitleInput" type="text" placeholder="Material title e.g. Theory PDF" />
+          <input id="materialUrlInput" type="text" placeholder="Material URL e.g. Google Drive PDF link" />
+        </div>
+
+        <button id="addLessonBtn" class="btn primary">Add Lesson</button>
+      </div>
+
+      <div class="admin-card">
+        <h3>Manage Existing Content</h3>
+        <div id="adminContentList"></div>
+      </div>
+
+    </section>
+  </main>
+
+  <div id="toast" class="toast"></div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
