@@ -256,7 +256,7 @@ function renderCourse() {
   const topic = getSelectedTopic();
   if (!topic) return;
 
-  courseBadge.textContent = "AL ICT Topic";
+  courseBadge.textContent = "1st Semester";
   courseTitle.textContent = topic.name;
   courseDescription.textContent = topic.description;
 

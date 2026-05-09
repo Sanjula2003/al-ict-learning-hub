@@ -4,21 +4,32 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>AL ICT Learning Hub</title>
+  
+
+  <title>Green Lamp</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.png">
 
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
   <header class="topbar">
+    <div class="brand">
+
+    <img src="logo.png" alt="Green Lamp Logo" class="logo" />
+
     <div>
-      <h1>AL ICT Learning Hub</h1>
-      <p>Modern YouTube-based learning platform for AL ICT students</p>
+      <h1>Green Lamp</h1>
+      <p>Lighting the path for NSBM learners</p>
     </div>
 
+  </div>
+
+    
+
     <div class="top-actions">
-      <button id="homeBtn" class="btn secondary">Dashboard</button>
-      <button id="adminBtn" class="btn primary">Teacher Admin</button>
+      <button id="homeBtn" class="btn secondary">Student Dashboard</button>
+      <button id="adminBtn" class="btn primary">Admin</button>
     </div>
   </header>
 
@@ -26,8 +37,8 @@
 
     <section id="dashboardView" class="view active">
       <div class="section-title">
-        <h2>Subject Topics</h2>
-        <p>Select a topic and continue learning chapter by chapter.</p>
+        <h2>Faculty Of Computing </h2>
+        <p>1st Year | 1st Semester</p>
       </div>
 
       <div id="topicCards" class="card-grid"></div>
@@ -39,7 +50,7 @@
       <div class="course-layout">
         <div class="video-panel">
           <div class="course-header">
-            <p id="courseBadge" class="badge">AL ICT Topic</p>
+            <p id="courseBadge" class="badge">1st semester</p>
             <h2 id="courseTitle">Course Title</h2>
             <p id="courseDescription">Course description</p>
           </div>
@@ -78,16 +89,16 @@
 
     <section id="adminView" class="view">
       <div class="section-title">
-        <h2>Teacher Admin Panel</h2>
+        <h2>Admin Panel</h2>
         <p>Login as the teacher to manage topics, YouTube lessons, and materials.</p>
       </div>
 
       <div class="admin-warning">
-        <strong>Secure Mode:</strong> Content is stored in Firebase Firestore. Only logged-in teachers can add or delete content.
+        <strong>Secure Mode:</strong> Only logged-in teachers can add or delete content.
       </div>
 
       <div class="admin-card">
-        <h3>Add New Topic</h3>
+        <h3>Add New Module</h3>
 
         <div class="form-grid">
           <input id="topicNameInput" type="text" placeholder="Topic name e.g. Programming Fundamentals" />

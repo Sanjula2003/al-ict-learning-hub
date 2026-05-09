@@ -49,7 +49,25 @@ body {
   background: rgba(8, 11, 18, 0.86);
   backdrop-filter: blur(18px);
   border-bottom: 1px solid var(--border);
+
 }
+
+/* Brand section */
+.brand{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Logo */
+.logo{
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
 
 .topbar h1 {
   font-size: 24px;
